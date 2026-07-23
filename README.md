@@ -1,6 +1,6 @@
-# 🤖 Agent Stack Learning
+# 🤖 Agents from First Principles
 
-> A hands-on progression from your first chatbot to a fully orchestrated, RAG-powered AI agent — all in Python.
+> A from-scratch implementation of the core mechanics behind LLM agents — tool calling, agentic loops, MCP, and RAG — built directly against the OpenAI API with no framework in between.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-API-412991?logo=openai&logoColor=white)
@@ -10,17 +10,18 @@
 
 ---
 
-## What You'll Learn
+## What This Demonstrates
 
-- How to call the OpenAI API from scratch
-- How to give an agent memory, personality, and streaming output
-- How to wire up **function/tool calling** so the model can run real code
-- How to build an **agentic loop** — the model keeps calling tools until it decides it's done
-- How to handle **multi-tool orchestration** across several APIs
-- How to read and reason over **CSV and PDF files**
-- How to build and connect to an **MCP server** for modular, reusable tools
-- How to implement **RAG from scratch** using embeddings and cosine similarity
-- How to scale RAG with a **pgvector PostgreSQL** vector database
+- Calling the OpenAI API directly — chat, memory, streaming, system-prompt personas
+- **Function/tool calling** implemented by hand: schemas, `tool_calls` parsing, the `role: tool` round-trip
+- An **agentic loop** — the model keeps calling tools until it decides it's done
+- **Multi-tool and parallel-tool orchestration** across several APIs
+- Reading and reasoning over **CSV and PDF files**
+- Building and connecting to an **MCP server** for modular, reusable tools
+- **RAG from scratch** — chunking, embeddings, cosine similarity — with no vector library
+- Scaling RAG with a **pgvector PostgreSQL** vector database
+
+No frameworks (LangChain, the Agents SDK, etc.) — everything is written directly against the raw OpenAI API so the mechanics underneath those frameworks are fully visible.
 
 ---
 
@@ -28,8 +29,8 @@
 
 ```bash
 # 1. Clone and enter the repo
-git clone https://github.com/chy0010/agent-stack-learning.git
-cd agent-stack-learning
+git clone https://github.com/chy0010/agents-from-first-principles.git
+cd agents-from-first-principles
 
 # 2. Set up your environment
 cp .env.example .env
@@ -46,9 +47,9 @@ python agent.py
 
 ---
 
-## Learning Path
+## Implementation Map
 
-Work through the scripts in order — each one builds on the last.
+Each script is a self-contained example of one concept, in increasing order of complexity.
 
 | # | File | Concept |
 |---|------|---------|
